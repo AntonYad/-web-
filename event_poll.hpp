@@ -11,18 +11,18 @@ class Handler;
 
 class Event
 {
-typedef void (*EventHandler)(Handler * handler, int fd);
+    typedef void (*EventHandler)(Handler* handler, int fd);
 public:
     Event()
         :fd_(0)
-        ,handler_(NULL)
-        ,evhandler_(NULL)
+        , handler_(NULL)
+        , evhandler_(NULL)
     {
     }
-    Event(int fd, EventHandler evhandler, Handler * handler = NULL)
+    Event(int fd, EventHandler evhandler, Handler* handler = NULL)
         :fd_(fd)
-        ,handler_(handler)
-        ,evhandler_(evhandler)
+        , handler_(handler)
+        , evhandler_(evhandler)
     {}
     void run()
     {
@@ -34,7 +34,7 @@ public:
     }
 private:
     int fd_;
-    Handler * handler_;
+    Handler* handler_;
     EventHandler evhandler_;
 };
 
@@ -46,7 +46,7 @@ public:
     {
         pthread_mutex_init(&mutex_, NULL);
     }
-    void EventPush(int fd, Event & event)
+    void EventPush(int fd, Event& event)
     {
         LockMap();
         events_.insert(std::make_pair(fd, event));
@@ -57,7 +57,7 @@ public:
     {
 
         LockMap();
-        Event * ret = &events_[fd];
+        Event* ret = &events_[fd];
         UnLockMap();
         return ret;
     }
@@ -72,11 +72,11 @@ private:
     void LockMap()
     {
         pthread_mutex_lock(&mutex_);
-    } 
+    }
     void UnLockMap()
     {
         pthread_mutex_unlock(&mutex_);
-    } 
+    }
 private:
     std::unordered_map<int, Event> events_;
     pthread_mutex_t mutex_;
@@ -95,20 +95,20 @@ public:
     ~Epoll()
     {
         close(epoll_fd);
-        delete [] revents;
+        delete[] revents;
     }
-    bool EventAdd(int fd, bool oneshot = true) 
+    bool EventAdd(int fd, bool oneshot = true)
     {
         struct epoll_event event;
-        if(oneshot){
+        if (oneshot) {
             event.events = EPOLLIN | EPOLLONESHOT;
         }
-        else{
+        else {
             event.events = EPOLLIN;
         }
         event.data.fd = fd;
-        
-        if(epoll_ctl(epoll_fd, EPOLL_CTL_ADD, fd, &event) < 0){
+
+        if (epoll_ctl(epoll_fd, EPOLL_CTL_ADD, fd, &event) < 0) {
             return false;
         }
         return true;
@@ -116,21 +116,21 @@ public:
 
     bool EventDel(int fd)
     {
-        if(epoll_ctl(epoll_fd, EPOLL_CTL_DEL, fd, NULL) < 0){
+        if (epoll_ctl(epoll_fd, EPOLL_CTL_DEL, fd, NULL) < 0) {
             return false;
         }
         return true;
     }
 
-    bool EpollWait(std::vector<int> & fdvector)
-    { 
-        
+    bool EpollWait(std::vector<int>& fdvector)
+    {
+
         int fd_num = epoll_wait(epoll_fd, revents, 100, -1);
-        if(fd_num < 0){
+        if (fd_num < 0) {
             return false;
         }
 
-        for(int i = 0; i < fd_num; ++i)
+        for (int i = 0; i < fd_num; ++i)
         {
             int event_fd;
             event_fd = revents[i].data.fd;
@@ -139,34 +139,34 @@ public:
         return true;
     }
 
-    
+
 private:
     int epoll_fd;
-    struct epoll_event * revents;
+    struct epoll_event* revents;
 };
 
 
 class Singleton
 {
 public:
-    static Epoll * GetEpoll()
+    static Epoll* GetEpoll()
     {
         return epoll;
     }
-    static EventPool * GetEventPool()
+    static EventPool* GetEventPool()
     {
         return eventpool;
     }
 private:
     Singleton() = delete;
-    Singleton(Singleton const &) = delete;
-    Singleton & operator=(Singleton const&) = delete;
+    Singleton(Singleton const&) = delete;
+    Singleton& operator=(Singleton const&) = delete;
 private:
-    static EventPool * eventpool;
-    static Epoll * epoll;
+    static EventPool* eventpool;
+    static Epoll* epoll;
 };
 
-EventPool * Singleton::eventpool = new EventPool;
-Epoll * Singleton::epoll = new Epoll;
+EventPool* Singleton::eventpool = new EventPool;
+Epoll* Singleton::epoll = new Epoll;
 
 #endif
