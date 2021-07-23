@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   
+   <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- External CSS AND JS -->
+    <link rel="stylesheet" type="text/css" href="billionare.css"/>
+    <script type="text/javascript" src="billionare.js"></script>
+
+    <title>Billionare</title>
+  </head>
+
+  <body style="background-color: #d1d1d1">
+
+    <!--Navbar -->
+    <nav style="background-color: #FFFFFF" class="navbar navbar-expand-lg navbar-light">
+        <a style="font-weight:bolder;" class="navbar-brand" href="#">BILLIONARE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">            
+            <li class="nav-item dropdown">
+              <a style="font-weight:bold;"  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Select Billionare
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#" onclick="javascript:chooseBillionare(1)">Jeff Bezos</a>
+                <a class="dropdown-item" href="#" onclick="javascript:chooseBillionare(2)">Bill Gates</a>
+                <a class="dropdown-item" href="#" onclick="javascript:chooseBillionare(3)">Jack Ma</a>         
+            </li>  
+            <li class="nav-item">
+              <a style="font-weight:bold;" class="nav-link" href="about.html">About</a>
+            </li>     
+          </ul>
+        </div>
+    </nav>
+    <!--   -->
+  
+   <!-- Billionare Profile  -->
+   <div style="background-color:white" class="container mt-4 " >
+      <div class="col-md-12">
+        <div class="text-center">
+          <img  class="rounded-circle my-2" id="BillionareImage" alt="100x100" src="images/ambani.jpg"
+                data-holder-rendered="true" height="110" >
+          <h2 class="pb-0" id="BillionareName">Jack Ma</h2>
+          <p style="color:#298838;font-weight:bolder; font-size:18px;padding:0">Spend Millionare's Money:</p>
+        </div>
+      </div>
+       <div  id="myHeader" class="header col-md-12" >  
+        <div style="background-color:#298838"  class="text-center p-2 mb-2  text-white" >       
+          <h2 id="balance" style="word-wrap:break-word">&#x20B9 3270508500000</h2>
+        </div>
+      </div> 
+   </div>
+
+   <!--   -->
+
+  <!--Items Section   -->
+  <div class="content">
+  <div  class="container  mt-4">
+    <!--Items Row   -->
+    <div style="background-color:white" class="row" id="item_row">
+      <!--Item 1   -->
+      <div class="col-sm  text-center">
+          <img class="itemimage"  alt="100x100" src="images/iPhone11Pro.jpg"
+                  data-holder-rendered="true" height="100" width="110" >
+          <h4>iPhone11Pro</h4> 
+          <span class="badge badge-light">0</span>                   
+          <input type="text" class="amt text-success"  value="&#x20B9 99900" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2"  onclick="javascript:buyProduct(0)" >Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 " disabled  onclick="javascript:sellProduct(0)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 2-->
+      <div class="col-sm  text-center">
+          <img class="itemimage" alt="100x100" src="images/SONYPS4.jpg"
+                  data-holder-rendered="true" height="100" width="110" >
+          <h4>SONYPS4</h4>
+          <span  class="badge">0</span>      
+          <input type="text" class="amt text-success"  value="&#x20B9 23999" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(1)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(1)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 3 -->
+      <div class="col-sm text-center">
+          <img class="itemimage"  alt="100x100" src="images/AlienwareLaptop.jpg"
+                  data-holder-rendered="true" height="100" width="110" >
+          <h4>AlienwareLaptop</h4> 
+          <span class="badge badge-light">0</span>     
+          <input type="text" class="amt text-success"  value="&#x20B9 144000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(2)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(2)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+    
+    </div>
+    <!--Items Row End   -->
+  
+    <!--Items Row   -->
+    <div style="background-color:white" class="row" id="item_row">
+      <!--Item 1   -->
+      <div class="col-sm text-center">
+          <img class="itemimage"  alt="100x100" src="images/Headphone.jpg"
+                  data-holder-rendered="true" height="100" width="110" >
+          <h4>Headphone</h4> 
+          <span class="badge badge-light">0</span>     
+          <input type="text" class="amt text-success"  value="&#x20B9 4000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(3)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(3)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 2-->
+      <div class="col-sm text-center">
+          <img class="itemimage"  alt="100x100" src="images/AJ.jpg"
+                  data-holder-rendered="true" height="100" width="110" >
+          <h4>AJ</h4>  
+          <span class="badge badge-light">0</span>    
+          <input type="text" class="amt text-success"  value="&#x20B9 81000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(4)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(4)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 3 -->
+      <div class="col-sm text-center">
+          <img class="itemimage"  alt="100x100" src="images/4KTV.jpg"
+                  data-holder-rendered="true" height="100" width="110" >
+          <h4>4KTV</h4> 
+          <span class="badge badge-light">0</span>     
+          <input type="text" class="amt text-success"  value="&#x20B9 36000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(5)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(5)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+    </div>
+    <!--Items Row End   -->
+
+
+    <!--Items Row   -->
+    <div style="background-color:white" class="row" id="item_row">
+      <!--Item 1   -->
+      <div class="col-sm text-center">
+          <img class="itemimage" alt="100x100" src="images/NikeFlyknit.jpg"
+                  data-holder-rendered="true" height="100" width="110" >
+          <h4>NikeFlyknit</h4> 
+          <span class="badge badge-light">0</span>     
+          <input type="text" class="amt text-success"  value="&#x20B9 10000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(6)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(6)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 2-->
+      <div class="col-sm text-center">
+          <img class="itemimage"  alt="100x100" src="images/AppleWatchS5.jpg"
+                  data-holder-rendered="true" height="100" width="110" >
+          <h4>AppleWatchS5</h4>  
+          <span class="badge badge-light">0</span>    
+          <input type="text" class="amt text-success"  value="&#x20B9 40000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(7)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(7)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 3 -->
+      <div class="col-sm text-center">              
+          <img class="itemimage"  alt="100x100" src="images/CanonDSLR.jpg"
+                  data-holder-rendered="true" height="100" width="110" >
+          <h4>CanonDSLR</h4>
+          <span class="badge badge-light">0</span>
+          <input type="text" class="amt text-success"  value="&#x20B9 236000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(8)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(8)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+    </div>
+    <!--Items Row End   --> 
+
+       <!--Items Row   -->
+    <div style="background-color:white" class="row" id="item_row">
+      <!--Item 1   -->
+      <div class="col-sm text-center">
+          <img class="itemimage" alt="100x100" src="images/RolexGMT2.jpg"
+                  data-holder-rendered="true" height="100" width="110" >
+          <h4>RolexGMT2</h4> 
+          <span class="badge badge-light">0</span>     
+          <input type="text" class="amt text-success"  value="&#x20B9 6500000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(9)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(9)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 2-->
+      <div class="col-sm text-center">
+          <img class="itemimage"  alt="100x100" src="images/Drone.jpg"
+                  data-holder-rendered="true" height="100" width="110" >
+          <h4>Drone</h4>  
+          <span class="badge badge-light">0</span>    
+          <input type="text" class="amt text-success"  value="&#x20B9 50000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(10)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(10)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 3 -->
+      <div class="col-sm text-center">              
+          <img class="itemimage"  alt="100x100" src="images/DiamondRing.jpg"
+                  data-holder-rendered="true" height="100" width="110" >
+          <h4>DiamondRing</h4>
+          <span class="badge badge-light">0</span>
+          <input type="text" class="amt text-success"  value="&#x20B9 379000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(11)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(11)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+    </div>
+    <!--Items Row End   --> 
+
+
+       <!--Items Row   -->
+    <div style="background-color:white" class="row" id="item_row">
+      <!--Item 1   -->
+      <div class="col-sm text-center">
+          <img class="itemimage" alt="100x100" src="images/JetSki.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>JetSki</h4> 
+          <span class="badge badge-light">0</span>     
+          <input type="text" class="amt text-success"  value="&#x20B9 60000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(12)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(12)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 2-->
+      <div class="col-sm text-center">
+          <img class="itemimage"  alt="100x100" src="images/CruiseShip.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>CruiseShip</h4>  
+          <span class="badge badge-light">0</span>    
+          <input type="text" class="amt text-success"  value="&#x20B9 91824000000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(13)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(13)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 3 -->
+      <div class="col-sm text-center">              
+          <img class="itemimage"  alt="100x100" src="images/Airplane.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>Airplane</h4>
+          <span class="badge badge-light">0</span>
+          <input type="text" class="amt text-success"  value="&#x20B9 11478000000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(14)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(14)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+    </div>
+    <!--Items Row End   --> 
+
+      <!--Items Row   -->
+    <div style="background-color:white" class="row" id="item_row">
+      <!--Item 1   -->
+      <div class="col-sm text-center">
+          <img class="itemimage" alt="100x100" src="images/Helicopter.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>Helicopter</h4> 
+          <span class="badge badge-light">0</span>     
+          <input type="text" class="amt text-success"  value="&#x20B9 13391000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(15)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(15)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 2-->
+      <div class="col-sm text-center">
+          <img class="itemimage"  alt="100x100" src="images/GucciMarmont.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>GucciMarmont</h4>  
+          <span class="badge badge-light">0</span>    
+          <input type="text" class="amt text-success"  value="&#x20B9 164340" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(16)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(16)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 3 -->
+      <div class="col-sm text-center">              
+          <img class="itemimage"  alt="100x100" src="images/BMWG310R.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>BMWG310R</h4>
+          <span class="badge badge-light">0</span>
+          <input type="text" class="amt text-success"  value="&#x20B9 1900000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(17)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(17)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+    </div>
+    <!--Items Row End   --> 
+   
+    <!--Items Row   -->
+    <div style="background-color:white" class="row" id="item_row">
+      <!--Item 1   -->
+      <div class="col-sm text-center">
+          <img class="itemimage" alt="100x100" src="images/FerrariSpider.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>FerrariSpider</h4> 
+          <span class="badge badge-light">0</span>     
+          <input type="text" class="amt text-success"  value="&#x20B9 40000000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(18)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(18)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 2-->
+      <div class="col-sm text-center">
+          <img class="itemimage"  alt="100x100" src="images/TeslaS.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>TeslaS</h4>  
+          <span class="badge badge-light">0</span>    
+          <input type="text" class="amt text-success"  value="&#x20B9 15000000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(19)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(19)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 3 -->
+      <div class="col-sm text-center">              
+          <img class="itemimage"  alt="100x100" src="images/LamborghiniHuracan.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>LamborghiniHuracan</h4>
+          <span class="badge badge-light">0</span>
+          <input type="text" class="amt text-success"  value="&#x20B9 38900000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(20)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(20)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+    </div>
+    <!--Items Row End   --> 
+
+    <!--Items Row   -->
+    <div style="background-color:white" class="row" id="item_row">
+      <!--Item 1   -->
+      <div class="col-sm text-center">
+          <img class="itemimage" alt="100x100" src="images/Hiranandani5BHK.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>Hiranandani5BHK</h4> 
+          <span class="badge badge-light">0</span>     
+          <input type="text" class="amt text-success"  value="&#x20B9 160000000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(21)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(21)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 2-->
+      <div class="col-sm text-center">
+          <img class="itemimage"  alt="100x100" src="images/MannatSRK.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>MannatSRK</h4>  
+          <span class="badge badge-light">0</span>    
+          <input type="text" class="amt text-success"  value="&#x20B9 2000000000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(22)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(22)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 3 -->
+      <div class="col-sm text-center">              
+          <img class="itemimage"  alt="100x100" src="images/BeachHouse.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>BeachHouse</h4>
+          <span class="badge badge-light">0</span>
+          <input type="text" class="amt text-success"  value="&#x20B9 375000000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(23)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(23)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+    </div>
+    <!--Items Row End   --> 
+
+
+
+    <!--Items Row   -->
+    <div style="background-color:white" class="row" id="item_row">
+      <!--Item 1   -->
+      <div class="col-sm text-center">
+          <img class="itemimage" alt="100x100" src="images/Mansion.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>Mansion</h4> 
+          <span class="badge badge-light">0</span>     
+          <input type="text" class="amt text-success"  value="&#x20B9 600000000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(24)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(24)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 2-->
+      <div class="col-sm text-center">
+          <img class="itemimage"  alt="100x100" src="images/Antilla.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>Antilla</h4>  
+          <span class="badge badge-light">0</span>    
+          <input type="text" class="amt text-success"  value="&#x20B9 120000000000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(25)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(25)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 3 -->
+      <div class="col-sm text-center">              
+          <img class="itemimage"  alt="100x100" src="images/BurjKhalifa.jpeg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>BurjKhalifa</h4>
+          <span class="badge badge-light">0</span>
+          <input type="text" class="amt text-success"  value="&#x20B9 314825750000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(26)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(26)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+    </div>
+    <!--Items Row End   --> 
+  
+   <!--Items Row   -->
+    <div style="background-color:white" class="row" id="item_row">
+      <!--Item 1   -->
+      <div class="col-sm text-center">
+          <img class="itemimage" alt="100x100" src="images/ISLTeam.png"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>ISLTeam</h4> 
+          <span class="badge badge-light">0</span>     
+          <input type="text" class="amt text-success"  value="&#x20B9 190000000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(27)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(27)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 2-->
+      <div class="col-sm text-center">
+          <img class="itemimage"  alt="100x100" src="images/PKLTeam.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>PKLTeam</h4>  
+          <span class="badge badge-light">0</span>    
+          <input type="text" class="amt text-success"  value="&#x20B9 210000000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(28)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(28)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+      <!--Item 3 -->
+      <div class="col-sm text-center">              
+          <img class="itemimage"  alt="100x100" src="images/IPLTEAM.jpg"
+                  data-holder-rendered="true" height="110" width="180" >
+          <h4>IPLTEAM</h4>
+          <span class="badge badge-light">0</span>
+          <input type="text" class="amt text-success"  value="&#x20B9 780000000" disabled/>
+          <div class="row">
+            <div class="col text-center">
+              <button  type="button" class="btn btn-success my-2 mr-2" onclick="javascript:buyProduct(29)">Buy</button>
+              <button type="button" class="sell btn btn-danger my-2 "  onclick="javascript:sellProduct(29)" disabled>Sell</button>
+            </div>
+         </div>
+      </div>
+      <!--   -->
+
+    </div>
+    <!--Items Row End   --> 
+
+
+</div>
+</div>
+
+<div style="background-color:white" id="bucket" class="bucket container my-4">
+  <h5 style="color:#35a745; padding-top:3px; font-family:Comic Sans MS;" class="text-center">Your Shopping List...</h5>
+  <table class="text-center" style="background-color:white; padding-bottom:5px" cellpadding="2" cellspacing="2" border="0" bgcolor="#dfdfdf" width="40%" align="center">
+  <thead>
+      <tr>
+          <th>Item</th>
+          <th>Name</th>
+          <th >Quantity</th>
+
+      </tr>
+  </thead>
+      <tbody id="tableData"></tbody>
+  </table>  
+</div>
+
+
+<!-- Floating button -->
+<a href="#bucket" onclick="javascript:bucketItems()"  class="float">
+  <i class="fa fa-cart-arrow-down my-float"></i>
+</a>
+
+<div class="label-container">
+  <div class="label-text">Shopping Cart</div>
+  <i class="fa fa-play label-arrow"></i>
+</div>
+<!-- -->
+
+ <!-- Footer -->
+<footer >
+   <!-- Footer Elements -->
+  <div style="background-color:#2E7D32" class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-1">
+        <div class="mb-1 text-center">
+
+          <!-- fa-github -->
+          <a href="https://github.com/AntonYad" >
+            <i style="color:white" class="fa fa-github md-5 mr-3 fa-2x"> </i>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://blog.csdn.net/weixin_43762735" >
+            <i style="color:white" class="fa fa-linkedin md-5 mr-3 fa-2x"> </i>
+          </a>
+
+          <!--  -->
+          <a href="https://blog.csdn.net/weixin_43762735" >
+            <i style="color:white" class="fa fa-user md-5 mr-3 fa-2x"> </i>
+          </a>
+          
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+
+     <div style="background-color:#246428" class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-1 ">
+        <div class="text-center">
+          <p style="color: white;font-weight:lighter;margin:0px">Made by Yang Anton</p>         
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+  </div>
+</footer>
+
+<!-- footer end -->
+
+ <!--Sticky balance section   -->
+<script type="text/javascript">
+    window.onscroll = function() {myFunction()};
+
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+</script>
+ <!--  End -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
